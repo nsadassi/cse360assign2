@@ -20,13 +20,15 @@ public class Calculator {
 	 * Declaring Class Variables
 	 */
 	private int total;
+	private String history;
 	
 	/**
 	 * Constructor to initialize the member variables for each instance of
 	 * the class.
 	 */
 	public Calculator () {
-		total = 0;  // not needed - included for clarity
+		total = 0;  
+		history = "0";
 	}
 	
 	/**
@@ -37,31 +39,38 @@ public class Calculator {
 	}
 	
 	/**
-	 * This method is used to add the integer value to the total variable. 
+	 * This method is used to add the integer value to the total variable.
+	 * The operation and the operand is stored in history as a String. 
 	 */
 	public void add (int value) {
 		
 		total = total + value;
+		history = history + " + " + Integer.toString(value);
 	}
 	
 	/**
-	 * This method is used to subtract the integer value to the total variable. 
+	 * This method is used to subtract the integer value to the total variable.
+	 * The operation and the operand is stored in history as a String. 
 	 */
 	public void subtract (int value) {
 		
 		total = total - value;
+		history = history + " - " + Integer.toString(value);
 	}
 	
 	/**
-	 * This method is used to multiply the integer value to the total variable. 
+	 * This method is used to multiply the integer value to the total variable.
+	 * The operation and the operand is stored in history as a String. 
 	 */
 	public void multiply (int value) {
 		
 		total = total * value;
+		history = history + " * " + Integer.toString(value);
 	}
 	
 	/**
-	 * This method is used to divide the integer value to the total variable. 
+	 * This method is used to divide the integer value to the total variable.
+	 * The operation and the operand is stored in history as a String. 
 	 */
 	public void divide (int value) {
 		
@@ -71,12 +80,13 @@ public class Calculator {
 		else {
 			total = total / value;
 		}
+		history = history + " / " + Integer.toString(value);
 	}
 	
 	/**
 	 * This method is used to return the history of calculations performed. 
 	 */
 	public String getHistory () {
-		return "";
+		return history;
 	}
 }
